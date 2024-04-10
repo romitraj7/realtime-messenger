@@ -6,7 +6,7 @@ import { IoClose, IoTrash } from 'react-icons/io5'
 import { Conversation, User } from '@prisma/client';
 import { format } from 'date-fns';
 
-import useOtherUsers from '@/app/hooks/useOtherUsers';
+import useOtherUser from '@/app/hooks/useOtherUsers';
 import useActiveList from '@/app/hooks/useActiveList';
 
 import Avatar from '@/app/components/Avatar';
@@ -27,7 +27,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
   data,
 }) => {
   const [confirmOpen, setConfirmOpen] = useState(false);
-  const otherUser = useOtherUsers(data);
+  const otherUser = useOtherUser(data);
   
   const joinedDate = useMemo(() => {
     return format(new Date(otherUser.createdAt), 'PP');

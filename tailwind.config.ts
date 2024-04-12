@@ -7,12 +7,18 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: { },
+    extend: {
+      colors: {
+        dusk: "#242526",
+        lightgray: "#3a3b3c",
+      },
+    },
   },
   plugins: [
     require("@tailwindcss/forms")({
       strategy: 'class'
     })
   ],
+  darkMode: "class",
 };
 export default config;
